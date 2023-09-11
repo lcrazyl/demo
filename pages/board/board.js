@@ -40,7 +40,7 @@ Page({
     this.renderGoods();
   },
   // 渲染商品
-  renderGoods() {
+  renderGoods(a) {
     request({
       url: `/goods?_page=${this.data.page}&_limit=${this.data.limit}`
     }).then(res => {
