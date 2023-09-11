@@ -1,0 +1,24 @@
+<!--pages/search/search.wxml-->
+<view>
+  <!-- 搜索框 -->
+  <Search bind:abc='searchVal'></Search>
+
+  <!-- 搜索出的内容 -->
+  <van-cell
+  wx:for="{{list}}"
+  wx:key="id"
+    icon="shop-o"
+  >
+  <view slot="title">
+    <view class="van-cell-text">{{item.title}}</view>
+    <van-tag type="danger">{{item.feature}}</van-tag>
+    <view>
+      <image src='http://localhost:3000{{item.poster}}'></image>
+    </view>
+  </view>
+</van-cell>
+  <view wx:if="{{searchContent&&list.length===0}}">
+    <van-empty description="暂无商品" />
+  </view>
+</view>
+

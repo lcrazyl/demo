@@ -1,0 +1,33 @@
+/* pages/detail/detail.wxss */
+.active{
+  color: orange;
+}
+.bottom{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+.detail-swiper,.swiper-item,image{
+  height: 800rpx;
+}
+.user{
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #666;
+}
+.comment-list{
+  width: 718rpx;
+  margin: 0 auto;
+}
+.user .user-avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin:0 30rpx 30rpx 0;
+}
+.comment-img{
+  height: 400rpx;
+  width: 400rpx;
+}

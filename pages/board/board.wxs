@@ -1,0 +1,9 @@
+var msg = 'hello world';
+var fn = function(){
+  console.log('fn...')
+  return '我是fn'
+}
+module.exports = {
+  message:msg,
+  fn:fn
+}

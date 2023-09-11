@@ -1,0 +1,3 @@
+<!--pages/telform/telform.wxml-->
+<input type="text" bindinput="handleInput" placeholder="请输入电话号码" />
+<button bindtap="confirm">确定</button>

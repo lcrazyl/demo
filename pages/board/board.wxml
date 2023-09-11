@@ -1,0 +1,27 @@
+<!--pages/board/board.wxml-->
+<!-- 骨架屏 -->
+<van-skeleton title avatar row="8" avatar-size="100px" avatar-shape="square" loading="{{ loading }}">
+  <van-tree-select items="{{ items }}" main-active-index="{{ mainActiveIndex }}" bind:click-nav="onClickNav">
+    <view slot="content">
+      <view wx:for="{{items}}" wx:key="id" wx:if="{{mainActiveIndex===index}}">
+        <view wx:for="{{item.goods}}" wx:key="id" wx:for-item="good">
+          <van-card price="{{good.price}}" title="{{good.title}}" thumb="http://localhost:3000{{good.poster}}"  desc="{{good.goodcomment}}"/>
+        </view>
+      </view>
+    </view>
+  </van-tree-select>
+
+  <view class="goodlist">
+  <view class="goodlist-header">
+  </view>
+    <navigator url="{{'/pages/detail/detail?id='+item.id+'&title='+item.title}}" class="goodlist-item" wx:for="{{goodList}}" wx:key="id">
+          <image src="http://localhost:3000{{item.poster}}"/>
+          <view>
+            <view class="item-title">{{item.title}}</view>
+            <span class="item-price">￥{{item.price}}</span>
+          </view>
+    </navigator>
+    <!-- 补空位 -->
+    <view class="goodlist-item" wx:if="{{wrapperItem!==0}}"  wx:for="wrapperItem" wx:key="index"></view>
+  </view>
+</van-skeleton>

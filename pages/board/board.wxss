@@ -1,0 +1,45 @@
+/* pages/board/board.wxss */
+.van-skeleton {
+  height: 100vh;
+}
+.goodlist{
+  width: 718rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  background-color: #eee;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.goodlist image{
+  width: 180rpx;
+  height: 160rpx;
+}
+.goodlist .goodlist-item{
+  width: 200rpx;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+  align-items: center;
+  justify-content: center;
+
+}
+.goodlist .goodlist-item .item-title{
+  width: 180rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 35rpx;
+  color: #666;
+}
+.goodlist-header{
+  height: 80rpx;
+  background-color: rgb(216, 216, 216);
+  width: 100vw;
+  border-radius: 30rpx 30rpx 0 0;
+}
+.goodlist .goodlist-item .item-price{
+  color: red;
+  font-size: 30rpx;
+  margin-left: 10px;
+}

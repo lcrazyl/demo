@@ -1,0 +1,44 @@
+<!--pages/detail/detail.wxml-->
+
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="商品详细" bindtap="handleActive" data-index="0"></van-tab>
+  <van-tab title="商品评价" bindtap="handleActive" data-index="1"></van-tab>
+</van-tabs>
+
+
+<view wx:if="{{current==0}}">
+  <swiper autoplay circular indicator-dots interval="2000" indicator-active-color="white" class="detail-swiper">
+    <block wx:for="{{info.desc}}" wx:key="index">
+      <swiper-item class="swiper-item">
+        <image src="{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view>{{info.feature}}</view>
+</view>
+
+<view wx:else>
+  <view wx:for="{{commentList}}" class="comment-list" wx:key="index">
+    <view class="user">
+      <image class="user-avatar" src="http://localhost:3000/{{item.userImageUrl}}"/>
+        <view>
+          <view class="user-name">{{item.nickname}}</view>
+        <view class="user-time">{{item.creationTime}}</view>
+        </view>
+    </view>
+    <view>{{item.content}}</view>
+    <image class="comment-img" src="http://localhost:3000/{{item.imgUrl}}"/>
+  </view>
+</view>
+
+
+
+
+<van-goods-action>
+  <van-goods-action-icon icon="cart-o" text="购物车" bind:click="" />
+  <van-goods-action-button
+    text="加入购物车"
+    type="warning"
+    bind:click="handleAdd"
+  />
+</van-goods-action>

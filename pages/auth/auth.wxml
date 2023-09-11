@@ -1,0 +1,2 @@
+<!--pages/auth/auth.wxml-->
+<button bindtap="handleAuth">授权登录</button>
